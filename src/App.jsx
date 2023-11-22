@@ -1,5 +1,12 @@
+import Container from "./ui/Container";
+import Navbar from "./ui/Navbar";
+
 function App() {
-  return <div className="text-3xl text-yellow-500">test</div>;
+  return (
+    <Container>
+      <Navbar />
+    </Container>
+  );
 }
 
 export default App;
