@@ -89,3 +89,8 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+/* Change border color of input-parent into purple, when the input is in focus */
+.input-parent:has(input[type="text"]:focus) {
+  border: solid var(--purple);
+}
