@@ -8,7 +8,7 @@ function SearchInput() {
         />
       </div>
 
-      <span className="col-start-8 col-span-1 row-start-1 my-auto z-10">
+      <span className="col-start-8 col-span-1 row-start-1 my-auto z-10 cursor-pointer">
         <img src="./images/icon-search.svg" />
       </span>
     </div>
