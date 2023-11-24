@@ -7,7 +7,7 @@ function Word() {
           /ˈkiːbɔːd/
         </p>
       </div>
-      <div className="p-2">
+      <div className="py-2">
         <img src="./images/icon-play.svg" alt="play button" width="50px" />
       </div>
     </section>
