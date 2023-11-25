@@ -1,6 +1,6 @@
 import BulletPoint from "./BulletPoint";
 
-function Definition() {
+function Definition({ type }) {
   const listStyle =
     "font-normal text-[var(--dark)] text-[0.9375rem] flex items-start gap-6";
   const titleStyle = "text-base text-[var(--dark-grey)] font-normal";
@@ -8,7 +8,7 @@ function Definition() {
   return (
     <section className="flex flex-col gap-6">
       <div className="flex justify-between items-center">
-        <p className=" text-lg font-bold">noun</p>
+        <p className=" text-lg font-bold">{type}</p>
         <div className="w-[70vw] h-[0.0625rem] bg-[var(--grey)]"></div>
       </div>
       <p className={`${titleStyle}`}>Meaning</p>
