@@ -12,12 +12,12 @@ function App() {
   return (
     <Container darkMode={darkMode}>
       <Navbar onToggleDarkMode={setDarkMode} darkMode={darkMode} />
-      <SearchInput />
-      <Word />
-      <Definition type="noun" />
-      <Definition type="verb" />
-      <HorizontalLine />
-      <DefinitionSource />
+      <SearchInput darkMode={darkMode} />
+      <Word darkMode={darkMode} />
+      <Definition type="noun" darkMode={darkMode} />
+      <Definition type="verb" darkMode={darkMode} />
+      <HorizontalLine darkMode={darkMode} />
+      <DefinitionSource darkMode={darkMode} />
     </Container>
   );
 }

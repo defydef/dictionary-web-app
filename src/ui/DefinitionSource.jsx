@@ -1,4 +1,4 @@
-function DefinitionSource() {
+function DefinitionSource({ darkMode }) {
   return (
     <div className="flex flex-col gap-1">
       <p className="underline text-sm text-[var(--dark-grey)] font-normal">
@@ -7,7 +7,9 @@ function DefinitionSource() {
       <div className="flex items-center gap-3">
         <a
           href="https://en.wiktionary.org/wiki/keyboard"
-          className="text-sm font-normal text-[var(--dark)]"
+          className={`text-sm font-normal ${
+            darkMode ? "text-white" : "text-[var(--dark)]"
+          }`}
           target="_blank"
           rel="noreferrer"
         >
@@ -15,7 +17,6 @@ function DefinitionSource() {
         </a>
         <a
           href="https://en.wiktionary.org/wiki/keyboard"
-          className="text-sm font-normal text-[var(--dark)]"
           target="_blank"
           rel="noreferrer"
         >
