@@ -9,7 +9,9 @@ function Navbar({ darkMode, onToggleDarkMode }) {
           <img src="./images/logo.svg" alt="Dictionary logo" />
         </li>
         <li className="flex gap-3 justify-between items-center">
-          <p className="text-[0.875rem] font-bold leading-6">Mono</p>
+          <p className="text-[0.875rem] sm:text-[1.125rem] font-bold leading-6">
+            Mono
+          </p>
           <span className="cursor-pointer">
             <img src="./images/icon-arrow-down.svg" alt="dropdown arrow" />
           </span>
