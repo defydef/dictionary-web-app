@@ -11,12 +11,7 @@ function Navbar({ darkMode, onToggleDarkMode }) {
           <img src="./images/logo.svg" alt="Dictionary logo" />
         </li>
         <li className="flex gap-3 sm:gap-5 justify-between items-center">
-          <FontMenu />
-
-          <span className="cursor-pointer">
-            <img src="./images/icon-arrow-down.svg" alt="dropdown arrow" />
-          </span>
-
+          <FontMenu darkMode={darkMode} />
           <div className="w-[0.0625rem] h-8 bg-[var(--grey)]"></div>
           <label className="switch">
             <input type="checkbox" onChange={toggleDarkMode} />
