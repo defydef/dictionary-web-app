@@ -9,9 +9,15 @@ import Word from "./ui/Word";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const [fontFamily, setFontFamily] = useState("font-[Inconsolata]");
   return (
-    <Container darkMode={darkMode}>
-      <Navbar onToggleDarkMode={setDarkMode} darkMode={darkMode} />
+    <Container darkMode={darkMode} fontFamily={fontFamily}>
+      <Navbar
+        onToggleDarkMode={setDarkMode}
+        darkMode={darkMode}
+        onSelectFontFamily={setFontFamily}
+        fontFamily={fontFamily}
+      />
       <SearchInput darkMode={darkMode} />
       <Word darkMode={darkMode} />
       <Definition type="noun" darkMode={darkMode} />

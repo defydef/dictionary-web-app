@@ -1,6 +1,11 @@
 import FontMenu from "./FontMenu";
 
-function Navbar({ darkMode, onToggleDarkMode }) {
+function Navbar({
+  darkMode,
+  onToggleDarkMode,
+  onSelectFontFamily,
+  fontFamily,
+}) {
   function toggleDarkMode() {
     onToggleDarkMode(!darkMode);
   }
@@ -11,7 +16,11 @@ function Navbar({ darkMode, onToggleDarkMode }) {
           <img src="./images/logo.svg" alt="Dictionary logo" />
         </li>
         <li className="flex gap-3 sm:gap-5 justify-between items-center">
-          <FontMenu darkMode={darkMode} />
+          <FontMenu
+            darkMode={darkMode}
+            onSelectFontFamily={onSelectFontFamily}
+            fontFamily={fontFamily}
+          />
           <div className="w-[0.0625rem] h-8 bg-[var(--grey)]"></div>
           <label className="switch">
             <input type="checkbox" onChange={toggleDarkMode} />
