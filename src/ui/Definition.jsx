@@ -8,7 +8,7 @@ function Definition({ type, darkMode }) {
 
   return (
     <section className={`flex flex-col gap-6 ${darkMode && "text-white"}`}>
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center sm:gap-8">
         <p className="text-lg sm:text-2xl font-bold">{type}</p>
         <div
           className={`w-[70vw] sm:w-[85vw] h-[0.0625rem] ${
@@ -17,7 +17,7 @@ function Definition({ type, darkMode }) {
         ></div>
       </div>
       <p className={`${titleStyle}`}>Meaning</p>
-      <ul className="flex flex-col gap-4 sm:pr-20 sm:pl-8">
+      <ul className="flex flex-col gap-4 sm:pr-20 md:pr-0 sm:pl-8">
         <li className={listStyle}>
           <p className="mt-[0.6rem]">
             <BulletPoint />

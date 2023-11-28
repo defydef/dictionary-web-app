@@ -1,4 +1,8 @@
+import { useDictionary } from "../contexts/DictionaryContext";
+
 function Word({ darkMode }) {
+  const { searchedWord } = useDictionary();
+
   return (
     <section className="flex justify-between sm:mt-8 sm:mb-2">
       <div className="flex flex-col justify-between gap-4 sm:gap-8">
@@ -7,13 +11,13 @@ function Word({ darkMode }) {
             darkMode ? "text-white" : ""
           } text-[var(--dark)] text-[2rem] sm:text-[4rem] font-bold`}
         >
-          keyboard
+          {searchedWord}
         </p>
         <p className="text-[var(--purple)] text-lg sm:text-2xl leading-6 font-normal font-[Inter]">
-          /ˈkiːbɔːd/
+          {searchedWord}
         </p>
       </div>
-      <div className="py-2">
+      <div className="py-2 cursor-pointer">
         <img
           src="./images/icon-play.svg"
           alt="play button"

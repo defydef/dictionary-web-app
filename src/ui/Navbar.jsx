@@ -23,7 +23,11 @@ function Navbar({
           />
           <div className="w-[0.0625rem] h-8 bg-[var(--grey)]"></div>
           <label className="switch">
-            <input type="checkbox" onChange={toggleDarkMode} />
+            <input
+              type="checkbox"
+              onChange={toggleDarkMode}
+              checked={darkMode}
+            />
             <span className="slider round"></span>
           </label>
           <span className=" cursor-pointer">
@@ -34,6 +38,7 @@ function Navbar({
                   : "./images/icon-moon.svg"
               }
               alt="dark mode toggle"
+              onClick={toggleDarkMode}
             />
           </span>
         </li>
