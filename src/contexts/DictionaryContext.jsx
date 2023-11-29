@@ -11,6 +11,7 @@ function DictionaryProvider({ children }) {
     phonetics: [],
     meanings: [],
     sourceUrls: [],
+    error: null,
   };
 
   function reducer(state, action) {
@@ -19,6 +20,7 @@ function DictionaryProvider({ children }) {
         return {
           ...state,
           isLoading: true,
+          error: null,
         };
       case "dictionary/get":
         return {
@@ -27,12 +29,26 @@ function DictionaryProvider({ children }) {
           searchedWord: action.payload.word,
           phonetic: action.payload.phonetic,
         };
+      case "rejected":
+        return {
+          ...state,
+          error: action.payload,
+          isLoading: false,
+        };
       default:
         throw new Error("Undefined action");
     }
   }
   const [
-    { isLoading, searchedWord, phonetic, phonetics, meanings, sourceUrls },
+    {
+      isLoading,
+      searchedWord,
+      phonetic,
+      phonetics,
+      meanings,
+      sourceUrls,
+      error,
+    },
     dispatch,
   ] = useReducer(reducer, initialState);
 
@@ -48,6 +64,10 @@ function DictionaryProvider({ children }) {
           payload: data[0],
         });
       } catch {
+        dispatch({
+          type: "rejected",
+          payload: "Failed to get dictionary result",
+        });
         throw Error("Failed to get dictionary result");
       }
     },
@@ -85,6 +105,7 @@ function DictionaryProvider({ children }) {
         phonetics,
         meanings,
         sourceUrls,
+        error,
         getDictionary,
       }}
     >
