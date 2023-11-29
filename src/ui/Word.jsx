@@ -4,7 +4,9 @@ import Loader from "./Loader";
 function Word({ darkMode }) {
   const { searchedWord, phonetic, isLoading, error } = useDictionary();
 
-  return (
+  return isLoading ? (
+    <Loader />
+  ) : error ? null : !searchedWord ? null : (
     <section className="flex justify-between sm:mt-8 sm:mb-2">
       <div className="flex flex-col justify-between gap-4 sm:gap-8">
         <p
@@ -13,7 +15,6 @@ function Word({ darkMode }) {
           } text-[var(--dark)] text-[2rem] sm:text-[4rem] font-bold`}
         >
           {isLoading ? <Loader /> : searchedWord}
-          {error}
         </p>
         <p className="text-[var(--purple)] text-lg sm:text-2xl leading-6 font-normal font-[Inter]">
           {phonetic}

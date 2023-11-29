@@ -1,5 +1,8 @@
+import { useDictionary } from "../contexts/DictionaryContext";
+
 function DefinitionSource({ darkMode }) {
-  return (
+  const { isLoading, error, searchedWord } = useDictionary();
+  return isLoading || error ? null : !searchedWord ? null : (
     <div className="flex flex-col sm:flex-row sm:gap-5 gap-1">
       <p className="underline text-sm text-[var(--dark-grey)] font-normal">
         Source

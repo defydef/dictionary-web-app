@@ -29,7 +29,7 @@ function Definition({ type, darkMode, definitions, synonyms }) {
         ))}
       </ul>
       {synonyms.length !== 0 && (
-        <div className="flex items-center gap-10">
+        <div className="flex items-start gap-10">
           <p className={titleStyle}>Synonyms</p>
           <p className="font-bold text-[var(--purple)] sm:text-xl">
             {synonyms.map(

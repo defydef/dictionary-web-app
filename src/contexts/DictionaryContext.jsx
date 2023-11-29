@@ -38,6 +38,22 @@ function DictionaryProvider({ children }) {
           error: action.payload,
           isLoading: false,
         };
+      case "error/emptyInput":
+        return {
+          ...state,
+          error: action.payload,
+          isLoading: false,
+        };
+      case "reset":
+        return {
+          ...state,
+          searchedWord: "",
+          phonetic: "",
+          phonetics: [],
+          meanings: [],
+          sourceUrls: [],
+          error: null,
+        };
       default:
         throw new Error("Undefined action");
     }
@@ -71,7 +87,7 @@ function DictionaryProvider({ children }) {
           type: "rejected",
           payload: "Failed to get dictionary result",
         });
-        throw Error("Failed to get dictionary result");
+        // throw Error("Failed to get dictionary result");
       }
     },
     []
@@ -110,6 +126,7 @@ function DictionaryProvider({ children }) {
         sourceUrls,
         error,
         getDictionary,
+        dispatch,
       }}
     >
       {children}
