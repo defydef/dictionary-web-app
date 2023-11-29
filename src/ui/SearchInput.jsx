@@ -19,6 +19,14 @@ function SearchInput({ darkMode }) {
     setWord(e.target.value);
   }
 
+  const handleKeyDown = (event) => {
+    // Check if the pressed key is Enter (keyCode 13)
+    if (event.key === "Enter") {
+      // Call the function that should be triggered on Enter
+      searchDefinition();
+    }
+  };
+
   return (
     <div className="flex flex-col gap-1">
       <div className="grid grid-cols-8 sm:grid-cols-12 grid-rows-1">
@@ -36,6 +44,7 @@ function SearchInput({ darkMode }) {
             className="bg-transparent row-start-1 col-start-1 col-span-7 z-10 pr-3 md:pl-1 focus:outline-none"
             value={word}
             onChange={(e) => enterInput(e)}
+            onKeyDown={handleKeyDown}
           />
         </div>
 
