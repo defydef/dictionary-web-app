@@ -28,6 +28,9 @@ function DictionaryProvider({ children }) {
           isLoading: false,
           searchedWord: action.payload.word,
           phonetic: action.payload.phonetic,
+          phonetics: action.payload.phonetics,
+          meanings: action.payload.meanings,
+          sourceUrls: action.payload.sourceUrls,
         };
       case "rejected":
         return {
