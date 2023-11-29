@@ -3,9 +3,13 @@ import DefinitionSource from "./DefinitionSource";
 
 function DefinitionSources({ darkMode }) {
   const { sourceUrls } = useDictionary();
-  return sourceUrls.map((source, index) => (
-    <DefinitionSource key={index} darkMode={darkMode} sourceUrl={source} />
-  ));
+  return (
+    <ul>
+      {sourceUrls.map((source, index) => (
+        <DefinitionSource key={index} darkMode={darkMode} sourceUrl={source} />
+      ))}
+    </ul>
+  );
 }
 
 export default DefinitionSources;

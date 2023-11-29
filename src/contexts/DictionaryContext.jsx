@@ -76,7 +76,7 @@ function DictionaryProvider({ children }) {
       try {
         dispatch({ type: "loading" });
         const res = await fetch(`${API_URL}${word}`);
-        if (!res.ok) throw new Error();
+        if (!res.ok) throw Error();
         const data = await res.json();
         dispatch({
           type: "dictionary/get",

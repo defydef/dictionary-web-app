@@ -2,8 +2,17 @@ import { useDictionary } from "../contexts/DictionaryContext";
 import Loader from "./Loader";
 
 function Word({ darkMode }) {
-  const { searchedWord, phonetic, isLoading, error } = useDictionary();
+  const { searchedWord, phonetic, phonetics, isLoading, error } =
+    useDictionary();
 
+  function playAudio() {
+    const audios = phonetics.filter((p) => p.audio !== "");
+    if (audios) {
+      const wordAudio = audios[0].audio;
+      const audio = wordAudio && new Audio(wordAudio);
+      audio.play();
+    }
+  }
   return isLoading ? (
     <Loader />
   ) : error ? null : !searchedWord ? null : (
@@ -20,7 +29,7 @@ function Word({ darkMode }) {
           {phonetic}
         </p>
       </div>
-      <div className="py-2 cursor-pointer">
+      <div className="py-2 cursor-pointer" onClick={playAudio}>
         <img
           src="./images/icon-play.svg"
           alt="play button"
