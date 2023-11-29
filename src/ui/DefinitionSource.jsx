@@ -1,28 +1,24 @@
 import { useDictionary } from "../contexts/DictionaryContext";
 
-function DefinitionSource({ darkMode }) {
+function DefinitionSource({ darkMode, sourceUrl }) {
   const { isLoading, error, searchedWord } = useDictionary();
-  return isLoading || error ? null : !searchedWord ? null : (
+  return isLoading || error ? null : !sourceUrl || !searchedWord ? null : (
     <div className="flex flex-col sm:flex-row sm:gap-5 gap-1">
       <p className="underline text-sm text-[var(--dark-grey)] font-normal">
         Source
       </p>
       <div className="flex items-center gap-3">
         <a
-          href="https://en.wiktionary.org/wiki/keyboard"
+          href={sourceUrl}
           className={`text-sm font-normal ${
             darkMode ? "text-white" : "text-[var(--dark)]"
           }`}
           target="_blank"
           rel="noreferrer"
         >
-          https://en.wiktionary.org/wiki/keyboard
+          {sourceUrl}
         </a>
-        <a
-          href="https://en.wiktionary.org/wiki/keyboard"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href={sourceUrl} target="_blank" rel="noreferrer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"

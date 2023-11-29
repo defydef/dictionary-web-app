@@ -8,6 +8,7 @@ import SearchInput from "./ui/SearchInput";
 import Word from "./ui/Word";
 import { DictionaryProvider } from "./contexts/DictionaryContext";
 import Definitions from "./ui/Definitions";
+import DefinitionSources from "./ui/DefinitionSources";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -26,7 +27,7 @@ function App() {
         <Word darkMode={darkMode} />
         <Definitions darkMode={darkMode} />
         <HorizontalLine darkMode={darkMode} />
-        <DefinitionSource darkMode={darkMode} />
+        <DefinitionSources darkMode={darkMode} />
       </DictionaryProvider>
     </Container>
   );
