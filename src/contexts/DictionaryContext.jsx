@@ -15,10 +15,17 @@ function DictionaryProvider({ children }) {
 
   function reducer(state, action) {
     switch (action.type) {
+      case "loading":
+        return {
+          ...state,
+          isLoading: true,
+        };
       case "dictionary/get":
         return {
           ...state,
+          isLoading: false,
           searchedWord: action.payload.word,
+          phonetic: action.payload.phonetic,
         };
       default:
         throw new Error("Undefined action");
@@ -32,7 +39,7 @@ function DictionaryProvider({ children }) {
   const getDictionary = useCallback(
     async function getDictionary(word) {
       try {
-        // setIsLoading(true);
+        dispatch({ type: "loading" });
         const res = await fetch(`${API_URL}${word}`);
         if (!res.ok) throw new Error();
         const data = await res.json();
@@ -88,7 +95,6 @@ function DictionaryProvider({ children }) {
 
 function useDictionary() {
   const context = useContext(DictionaryContext);
-  console.log(context);
   if (context === undefined) throw new Error("useDictionary is undefined ");
   return context;
 }

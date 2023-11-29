@@ -1,7 +1,8 @@
 import { useDictionary } from "../contexts/DictionaryContext";
+import Loader from "./Loader";
 
 function Word({ darkMode }) {
-  const { searchedWord } = useDictionary();
+  const { searchedWord, phonetic, isLoading } = useDictionary();
 
   return (
     <section className="flex justify-between sm:mt-8 sm:mb-2">
@@ -11,10 +12,10 @@ function Word({ darkMode }) {
             darkMode ? "text-white" : ""
           } text-[var(--dark)] text-[2rem] sm:text-[4rem] font-bold`}
         >
-          {searchedWord}
+          {isLoading ? <Loader darkMode={darkMode} /> : searchedWord}
         </p>
         <p className="text-[var(--purple)] text-lg sm:text-2xl leading-6 font-normal font-[Inter]">
-          {searchedWord}
+          {phonetic}
         </p>
       </div>
       <div className="py-2 cursor-pointer">
