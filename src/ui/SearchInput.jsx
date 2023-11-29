@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDictionary } from "../contexts/DictionaryContext";
 
 function SearchInput({ darkMode }) {
-  const { getDictionary, dispatch, error } = useDictionary();
+  const { getDictionary, dispatch, error, errorType } = useDictionary();
   const [word, setWord] = useState("");
 
   function searchDefinition() {
@@ -36,7 +36,7 @@ function SearchInput({ darkMode }) {
               ? "bg-[var(--input-bg-dark)] text-white"
               : "bg-[var(--light-grey-2)]"
           } active:border border-solid border-[var(--purple)] row-start-1 col-start-1 col-span-full h-12 rounded-2xl pl-5 grid grid-cols-8 input-parent ${
-            error && "border border-[var(--red)]"
+            errorType && "border border-[var(--red)]"
           }`}
         >
           <input
@@ -56,7 +56,7 @@ function SearchInput({ darkMode }) {
         </span>
       </div>
       <p className=" text-[var(--red)] sm:text-xl font-normal text-sm">
-        {error}
+        {errorType === "emptyField" && error}
       </p>
     </div>
   );

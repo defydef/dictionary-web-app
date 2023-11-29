@@ -12,6 +12,7 @@ function DictionaryProvider({ children }) {
     meanings: [],
     sourceUrls: [],
     error: null,
+    errorType: null,
   };
 
   function reducer(state, action) {
@@ -36,12 +37,14 @@ function DictionaryProvider({ children }) {
         return {
           ...state,
           error: action.payload,
+          // errorType: null,
           isLoading: false,
         };
       case "error/emptyInput":
         return {
           ...state,
           error: action.payload,
+          errorType: "emptyField",
           isLoading: false,
         };
       case "reset":
@@ -53,6 +56,7 @@ function DictionaryProvider({ children }) {
           meanings: [],
           sourceUrls: [],
           error: null,
+          errorType: null,
         };
       default:
         throw new Error("Undefined action");
@@ -67,6 +71,7 @@ function DictionaryProvider({ children }) {
       meanings,
       sourceUrls,
       error,
+      errorType,
     },
     dispatch,
   ] = useReducer(reducer, initialState);
@@ -125,6 +130,7 @@ function DictionaryProvider({ children }) {
         meanings,
         sourceUrls,
         error,
+        errorType,
         getDictionary,
         dispatch,
       }}
