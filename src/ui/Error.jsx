@@ -1,5 +1,4 @@
 function Error({ type }) {
-  console.log(type);
   return type === "emptyField" ? null : (
     <section className="flex flex-col items-center justify-between gap-7 sm:gap-10 mt-4">
       <p className="text-[4rem]">😕</p>

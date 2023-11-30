@@ -125,3 +125,16 @@ input:checked + .slider:before {
     transform: rotate(360deg);
   }
 }
+
+/* Toggle display child element on hover */
+.toggle-icon-on-hover:hover .icon-hide {
+  display: none;
+}
+
+.toggle-icon-on-hover .icon-display {
+  display: none;
+}
+
+.toggle-icon-on-hover:hover .icon-display {
+  display: block;
+}

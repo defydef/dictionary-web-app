@@ -18,7 +18,6 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [fontFamily, setFontFamily] = useState("font-[Inter]");
   const { error, errorType } = useDictionary();
-  console.log(error);
 
   return (
     <Container darkMode={darkMode} fontFamily={fontFamily}>

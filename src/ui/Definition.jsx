@@ -5,7 +5,6 @@ function Definition({ type, darkMode, definitions, synonyms }) {
     darkMode ? "text-white" : "text-[var(--dark)]"
   }`;
   const titleStyle = "text-base sm:text-xl text-[var(--dark-grey)] font-normal";
-  // console.log(synonims);
 
   return (
     <section className={`flex flex-col gap-6 ${darkMode && "text-white"}`}>

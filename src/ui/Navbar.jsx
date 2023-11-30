@@ -30,7 +30,7 @@ function Navbar({
             />
             <span className="slider round"></span>
           </label>
-          <span className=" cursor-pointer">
+          <span className="cursor-pointer toggle-icon-on-hover">
             <img
               src={
                 darkMode
@@ -39,6 +39,13 @@ function Navbar({
               }
               alt="dark mode toggle"
               onClick={toggleDarkMode}
+              className="icon-hide"
+            />
+            <img
+              src="./images/icon-moon-purple.svg"
+              alt="dark mode toggle"
+              onClick={toggleDarkMode}
+              className="icon-display"
             />
           </span>
         </li>

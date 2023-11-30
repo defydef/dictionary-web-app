@@ -5,9 +5,9 @@ function Definitions({ darkMode }) {
   const { isLoading, meanings, error } = useDictionary();
   return isLoading || error
     ? null
-    : meanings.map((m) => (
+    : meanings.map((m, index) => (
         <Definition
-          key={m.partOfSpeech}
+          key={index}
           darkMode={darkMode}
           type={m.partOfSpeech}
           definitions={m.definitions}
