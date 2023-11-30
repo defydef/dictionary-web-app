@@ -29,13 +29,21 @@ function Word({ darkMode }) {
           {phonetic}
         </p>
       </div>
-      <div className="py-2 cursor-pointer" onClick={playAudio}>
+      <span
+        className="py-2 cursor-pointer toggle-icon-on-hover"
+        onClick={playAudio}
+      >
         <img
           src="./images/icon-play.svg"
           alt="play button"
-          className="w-[50px] sm:w-[4.6875rem]"
+          className="w-[50px] sm:w-[4.6875rem] icon-hide"
         />
-      </div>
+        <img
+          src="./images/icon-play-purple.svg"
+          alt="play button"
+          className="w-[50px] sm:w-[4.6875rem] icon-display"
+        />
+      </span>
     </section>
   );
 }
