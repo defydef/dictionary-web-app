@@ -22,12 +22,12 @@ function Navbar({
             fontFamily={fontFamily}
           />
           <div className="w-[0.0625rem] h-8 bg-[var(--grey)]"></div>
-          <label className="switch">
+          <label className="switch" htmlFor="dark-mode">
             <input
               type="checkbox"
               onChange={toggleDarkMode}
               checked={darkMode}
-              label="dark-mode"
+              id="dark-mode"
             />
             <span className="slider round"></span>
           </label>

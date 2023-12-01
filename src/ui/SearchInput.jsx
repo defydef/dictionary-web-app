@@ -39,13 +39,14 @@ function SearchInput({ darkMode }) {
             errorType && "border border-[var(--red)]"
           }`}
         >
+          <label htmlFor="search"></label>
           <input
             type="text"
             className="bg-transparent row-start-1 col-start-1 col-span-7 z-10 pr-3 md:pl-1 focus:outline-none"
             value={word}
             onChange={(e) => enterInput(e)}
             onKeyDown={handleKeyDown}
-            label="search"
+            id="search"
           />
         </div>
 
