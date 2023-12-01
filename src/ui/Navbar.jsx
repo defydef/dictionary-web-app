@@ -27,6 +27,7 @@ function Navbar({
               type="checkbox"
               onChange={toggleDarkMode}
               checked={darkMode}
+              label="dark-mode"
             />
             <span className="slider round"></span>
           </label>

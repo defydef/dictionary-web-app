@@ -45,6 +45,7 @@ function SearchInput({ darkMode }) {
             value={word}
             onChange={(e) => enterInput(e)}
             onKeyDown={handleKeyDown}
+            label="search"
           />
         </div>
 
@@ -52,7 +53,7 @@ function SearchInput({ darkMode }) {
           className="col-start-8 sm:col-start-12 sm:ml-5 col-span-1 row-start-1 my-auto z-10 cursor-pointer"
           onClick={searchDefinition}
         >
-          <img src="./images/icon-search.svg" />
+          <img src="./images/icon-search.svg" alt="Search icon" />
         </span>
       </div>
       <p className=" text-[var(--red)] sm:text-xl font-normal text-sm">
