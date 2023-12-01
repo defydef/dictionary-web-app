@@ -1,22 +1,17 @@
 import { useEffect, useState } from "react";
 import Container from "./ui/Container";
-import Definition from "./ui/Definition";
-import DefinitionSource from "./ui/DefinitionSource";
 import HorizontalLine from "./ui/HorizontalLine";
 import Navbar from "./ui/Navbar";
 import SearchInput from "./ui/SearchInput";
 import Word from "./ui/Word";
-import {
-  DictionaryProvider,
-  useDictionary,
-} from "./contexts/DictionaryContext";
+import { useDictionary } from "./contexts/DictionaryContext";
 import Definitions from "./ui/Definitions";
 import DefinitionSources from "./ui/DefinitionSources";
 import Error from "./ui/Error";
 
 function App() {
   const [darkMode, setDarkMode] = useState(getInitialColorScheme);
-  const [fontFamily, setFontFamily] = useState("font-[Inter]");
+  const [fontFamily, setFontFamily] = useState("font-[Inconsolata]");
   const { error, errorType } = useDictionary();
 
   // Function to get the initial color scheme based on user preference
