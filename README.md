@@ -34,12 +34,16 @@ Users should be able to:
 
 Desktop view
 ![Desktop view](./public/screenshot/desktop%20view.png)
+
 Tablet view
 ![Tablet view](./public/screenshot/tablet%20view.png)
+
 Mobile view
 ![Mobile view](./public/screenshot/mobile%20view.png)
+
 Error - word not found
 ![Error - word not found](./public/screenshot/error.png)
+
 Error - searched word is empty
 ![Error - searched word is empty](./public/screenshot/empty%20error.png)
 
