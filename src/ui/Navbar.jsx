@@ -27,6 +27,7 @@ function Navbar({
               type="checkbox"
               onChange={toggleDarkMode}
               checked={darkMode}
+              aria-label="dark-mode"
               id="dark-mode"
             />
             <span className="slider round"></span>
