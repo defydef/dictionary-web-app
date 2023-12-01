@@ -8,6 +8,7 @@ import { useDictionary } from "./contexts/DictionaryContext";
 import Definitions from "./ui/Definitions";
 import DefinitionSources from "./ui/DefinitionSources";
 import Error from "./ui/Error";
+import Attribution from "./ui/Attribution";
 
 function App() {
   const [darkMode, setDarkMode] = useState(getInitialColorScheme);
@@ -66,6 +67,7 @@ function App() {
           <DefinitionSources darkMode={darkMode} />
         </>
       )}
+      <Attribution />
     </Container>
   );
 }
